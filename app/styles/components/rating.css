@@ -1,0 +1,43 @@
+/* ========================================
+   STAR RATING
+   Shared by Books and Gaming — see src/components/Rating.tsx.
+   Filled stars use --color-rating-fill (gold), kept separate from
+   --color-signal, which is reserved for live readouts, not
+   decorative use.
+   ======================================== */
+
+@layer components {
+  .rating {
+    display: flex;
+    gap: 0.15rem;
+    margin-top: 0.4rem;
+  }
+
+  .rating-star {
+    position: relative;
+    display: inline-flex;
+    color: var(--color-border-alt);
+  }
+
+  .rating-star-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .rating-star-fill-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: calc(var(--fill, 1) * 100%);
+    height: 100%;
+  }
+
+  .rating-star-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-rating-fill);
+  }
+}

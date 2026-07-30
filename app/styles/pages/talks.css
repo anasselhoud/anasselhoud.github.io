@@ -1,0 +1,140 @@
+/* ========================================
+   TALKS & EVENTS PAGE STYLES
+   ======================================== */
+
+.talks-page {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 0 3rem;
+}
+
+.talks-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.talks-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.talks-intro {
+  margin: 0.65rem 0 0;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+.talks-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+  color: var(--color-fg-bold);
+  text-decoration: none;
+}
+
+.talks-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.talks-section-label {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--rule-strong) solid var(--color-fg-bold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-fg-bold);
+}
+
+.talks-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.talks-item {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.talks-item:hover {
+  border-color: var(--color-accent);
+}
+
+.talks-item-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.talks-item-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-fg-bold);
+}
+
+.talks-item-date {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+.talks-item-meta {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+}
+
+.talks-item-type {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.talks-item-location {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+@media (max-width: 640px) {
+  .talks-header {
+    flex-direction: column;
+  }
+
+  .talks-item-heading {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}

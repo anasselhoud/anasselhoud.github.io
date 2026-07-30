@@ -1,0 +1,293 @@
+/* ========================================
+   ASTROPHOTOGRAPHY PAGE STYLES
+   ======================================== */
+
+.astro-page {
+  display: grid;
+  gap: 1.75rem;
+  padding: 1rem 0 3rem;
+}
+
+.astro-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.astro-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.astro-intro {
+  margin: 0.65rem 0 0;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+.astro-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+  color: var(--color-fg-bold);
+  text-decoration: none;
+}
+
+/* ===================
+   GALLERY GRID
+   =================== */
+.astro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.astro-tile {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  appearance: none;
+  padding: 0;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-subtle);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.astro-tile:hover,
+.astro-tile:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.astro-tile:focus-visible {
+  outline: var(--rule-strong) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.astro-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.astro-tile:hover img,
+.astro-tile:focus-visible img {
+  transform: scale(1.05);
+}
+
+.astro-tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: color-mix(in srgb, black 35%, transparent);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.astro-tile:hover .astro-tile-overlay,
+.astro-tile:focus-visible .astro-tile-overlay {
+  opacity: 1;
+}
+
+.astro-tile-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.4rem 0.75rem 0.6rem;
+  background: linear-gradient(to top, color-mix(in srgb, black 65%, transparent), transparent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.3;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+
+  /* Clamp to keep long captions from swallowing the tile. */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.astro-tile:hover .astro-tile-caption,
+.astro-tile:focus-visible .astro-tile-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================
+   LIGHTBOX
+   A full-bleed media viewer — deliberately near-black in both
+   themes, like a darkroom, rather than following page ink/paper.
+   =================== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: color-mix(in srgb, black 94%, var(--color-bg-alt));
+}
+
+.lightbox-figure {
+  display: grid;
+  gap: 0.75rem;
+  grid-column: 2;
+  justify-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border: var(--rule) solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
+}
+
+.lightbox-caption {
+  display: grid;
+  gap: 0.2rem;
+  max-width: 60ch;
+  text-align: center;
+}
+
+.lightbox-caption-text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: #f2f4f7;
+}
+
+.lightbox-caption-location {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: rgba(242, 244, 247, 0.6);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  padding: 0;
+  background: transparent;
+  border: var(--rule) solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-sm);
+  color: #f2f4f7;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-arrow:focus-visible {
+  outline: var(--rule-strong) solid #fff;
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.lightbox-arrow--prev {
+  grid-column: 1;
+}
+
+.lightbox-arrow--next {
+  grid-column: 3;
+}
+
+.lightbox-count {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  color: rgba(242, 244, 247, 0.6);
+}
+
+@media (max-width: 900px) {
+  .astro-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .astro-header {
+    flex-direction: column;
+  }
+
+  .astro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-overlay {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 1rem;
+  }
+
+  .lightbox-figure {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .lightbox-arrow--prev {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+  }
+
+  .lightbox-arrow--next {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: end;
+  }
+
+  .lightbox-count {
+    bottom: 0.75rem;
+  }
+}

@@ -1,0 +1,293 @@
+/* ========================================
+   GAMING ZONE PAGE STYLES
+   ======================================== */
+
+.gaming-page {
+  display: grid;
+  gap: 2.5rem;
+  padding: 1rem 0 3rem;
+}
+
+.gaming-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.gaming-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.gaming-intro {
+  margin: 0.65rem 0 0;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+.gaming-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+  color: var(--color-fg-bold);
+  text-decoration: none;
+}
+
+.gaming-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.gaming-section-heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-fg-bold);
+}
+
+.gaming-section-heading p {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+}
+
+/* ===================
+   FEATURED CARDS
+   =================== */
+.gaming-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gaming-featured-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.gaming-featured-card:hover {
+  border-color: var(--color-accent);
+}
+
+.gaming-featured-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-surface-subtle);
+}
+
+.gaming-featured-media img {
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.gaming-featured-card:hover .gaming-featured-media img {
+  transform: scale(1.04);
+}
+
+.gaming-featured-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, color-mix(in srgb, black 55%, transparent), transparent 55%);
+}
+
+.gaming-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.gaming-badge--perfect {
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent);
+}
+
+.gaming-badge--great {
+  background: color-mix(in srgb, black 45%, transparent);
+  color: #fff;
+  border: var(--rule) solid rgba(255, 255, 255, 0.4);
+}
+
+.gaming-featured-body {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+.gaming-featured-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-fg-bold);
+}
+
+.gaming-featured-desc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: var(--color-fg);
+}
+
+.gaming-featured-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0.2rem 0 0;
+  padding-top: 0.6rem;
+  border-top: var(--rule) solid var(--color-border);
+}
+
+.gaming-featured-stats dt {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+.gaming-featured-stats dd {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-fg-bold);
+}
+
+.platform-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-fg-bold);
+}
+
+.gaming-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.gaming-progress-track {
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-subtle);
+}
+
+.gaming-progress-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.gaming-progress-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--color-fg-light);
+}
+
+/* ===================
+   WALKTHROUGH TABLES
+   =================== */
+.gaming-walkthroughs {
+  display: grid;
+  gap: 2rem;
+}
+
+.gaming-year {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.gaming-year-heading {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--rule-strong) solid var(--color-fg-bold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  text-transform: capitalize;
+  color: var(--color-fg-bold);
+}
+
+.gaming-table-wrap {
+  overflow-x: auto;
+}
+
+.gaming-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.gaming-table th,
+.gaming-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: var(--rule) solid var(--color-border);
+}
+
+.gaming-table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+.gaming-table tbody th {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-fg-bold);
+}
+
+.gaming-table tbody td {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+}
+
+.gaming-table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+@media (max-width: 900px) {
+  .gaming-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .gaming-header {
+    flex-direction: column;
+  }
+
+  .gaming-featured-grid {
+    grid-template-columns: 1fr;
+  }
+}

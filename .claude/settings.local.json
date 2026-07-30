@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"interface Properties\\\\|CustomProperties\\\\|\\\\[v: \\\\`--\" /Users/nas/dropletLab/gitBunker/aelhoud.github.io/node_modules/csstype/index.d.ts)",
+      "Bash(npm run *)",
+      "Bash(npx biome *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx tsc *)",
+      "Bash(npm test *)",
+      "Bash(curl -sf http://localhost:3000)",
+      "Bash(break)",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s http://localhost:3000/books/)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(command -v npx)",
+      "Bash(npx -y playwright@1.62.0 install chromium)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node verify-books.mjs)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-nas-dropletLab-gitBunker-aelhoud-github-io/9f0f0616-7797-4d56-8883-e5a0bb7f13ce/scratchpad/package.json /private/tmp/claude-501/-Users-nas-dropletLab-gitBunker-aelhoud-github-io/9f0f0616-7797-4d56-8883-e5a0bb7f13ce/scratchpad/package-lock.json *)",
+      "Bash(npx prettier *)",
+      "Bash(node verify-books2.mjs)",
+      "Bash(node verify-rating.mjs)",
+      "Bash(node zoom.mjs)",
+      "Bash(node gold-check.mjs)",
+      "Bash(node check-both.mjs)",
+      "Bash(node final-check.mjs)",
+      "Bash(ls -la /Users/nas/dropletLab/gitBunker/ 2>&1)",
+      "Read(//Users/nas/dropletLab/gitBunker/**)",
+      "Bash(file /Users/nas/dropletLab/gitBunker/aelhoud.github.io/public/images/projects/*.jpg)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/claude-501/-Users-nas-dropletLab-gitBunker-aelhoud-github-io/9f0f0616-7797-4d56-8883-e5a0bb7f13ce/scratchpad/node_modules"
+    ]
+  }
+}

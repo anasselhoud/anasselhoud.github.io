@@ -1,0 +1,321 @@
+/* ========================================
+   BOOKS PAGE STYLES
+   ======================================== */
+
+.books-page {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 0 3rem;
+}
+
+.books-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.books-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.books-intro {
+  margin: 0.65rem 0 0;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+.books-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+  color: var(--color-fg-bold);
+  text-decoration: none;
+}
+
+.books-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.books-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.books-section-heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-fg-bold);
+}
+
+.books-section-heading p {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+}
+
+/* ===================
+   FEATURED SLIDESHOW
+   =================== */
+.books-slideshow {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.books-slideshow-viewport {
+  /* Single source of truth for how many slides show at once — Slideshow.tsx
+     reads this back via getComputedStyle to size pages and clamp the index. */
+  --slides-per-view: 1;
+  overflow: hidden;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+@media (min-width: 640px) {
+  .books-slideshow-viewport {
+    --slides-per-view: 2;
+  }
+}
+
+.books-slideshow-track {
+  display: flex;
+  transform: translateX(calc(var(--slide-index, 0) * (-100% / var(--slides-per-view, 1))));
+  transition: transform var(--duration-menu) var(--ease-menu);
+}
+
+.books-slideshow-track--instant {
+  transition: none;
+}
+
+.books-slideshow-slide {
+  display: grid;
+  flex: 0 0 calc(100% / var(--slides-per-view, 1));
+  box-sizing: border-box;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.1rem;
+  align-items: center;
+  padding: 1.5rem 1.35rem;
+}
+
+.books-slideshow-slide:not(:last-child) {
+  border-right: var(--rule) solid var(--color-border);
+}
+
+.books-slideshow-media {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-subtle);
+}
+
+.books-slideshow-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.books-slideshow-content {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.books-slideshow-title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--color-fg-bold);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.books-slideshow-author {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.books-slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.books-slideshow-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: var(--rule) solid var(--color-control-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-fg-bold);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.books-slideshow-arrow:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-fg-bold);
+}
+
+.books-slideshow-arrow:focus-visible {
+  outline: var(--rule-strong) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.books-slideshow-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.books-slideshow-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  background: var(--color-border-alt);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.books-slideshow-dot:hover {
+  background: var(--color-fg-light);
+}
+
+.books-slideshow-dot[aria-current='true'] {
+  background: var(--color-accent);
+}
+
+.books-slideshow-dot:focus-visible {
+  outline: var(--rule-strong) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ===================
+   BOOK GRID
+   =================== */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.books-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.books-card:hover {
+  border-color: var(--color-accent);
+}
+
+.books-card-media {
+  aspect-ratio: 2 / 3;
+  background: var(--color-surface-subtle);
+  overflow: hidden;
+}
+
+.books-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.books-card:hover .books-card-media img {
+  transform: scale(1.03);
+}
+
+.books-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem 0.85rem 0.9rem;
+}
+
+.books-card-category {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.books-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-fg-bold);
+}
+
+.books-card-author {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+}
+
+@media (max-width: 900px) {
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .books-header {
+    flex-direction: column;
+  }
+
+  .books-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}
