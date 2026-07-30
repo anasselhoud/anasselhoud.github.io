@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-
-import Hero from '../../Template/Hero';
 import { AUTHOR_NAME } from '@/lib/utils';
+import Hero from '../../Template/Hero';
 
 describe('Hero', () => {
   it('renders the hero section', () => {

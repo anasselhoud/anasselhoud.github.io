@@ -22,16 +22,16 @@ Work through these steps in order for the smoothest experience.
 
 ### Step 1: Identity & Contact
 
-| What to change          | File                                    | Notes                                                |
-| ----------------------- | --------------------------------------- | ---------------------------------------------------- |
-| Profile facts and email | `src/data/profile.json`                 | Shared by contact links, stats, metadata, and OG     |
-| Site URL and author     | `src/lib/utils.ts`, `package.json`      | Keep `SITE_URL` and `homepage` aligned               |
-| Social links            | `src/data/contact.ts`                   | Add or remove platforms as needed                    |
+| What to change          | File                                    | Notes                                                                                              |
+| ----------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Profile facts and email | `src/data/profile.json`                 | Shared by contact links, stats, metadata, and OG                                                   |
+| Site URL and author     | `src/lib/utils.ts`, `package.json`      | Keep `SITE_URL` and `homepage` aligned                                                             |
+| Social links            | `src/data/contact.ts`                   | Add or remove platforms as needed                                                                  |
 | Portrait                | `public/images/anass.jpg`               | Update `SITE_IMAGE_DIMENSIONS` in `src/lib/utils.ts` to match your image's actual pixel dimensions |
-| Homepage copy           | `src/components/Template/Hero.tsx`      | Name, role, tagline, and calls to action             |
-| Footer                  | `src/components/Template/Footer.tsx`    | Identity, source link, and copyright                 |
-| Resume introduction     | `app/resume/page.tsx`                   | Keep this summary aligned with the homepage          |
-| SEO defaults            | `app/layout.tsx`, `src/lib/metadata.ts` | Keywords and shared page-card metadata               |
+| Homepage copy           | `src/components/Template/Hero.tsx`      | Name, role, tagline, and calls to action                                                           |
+| Footer                  | `src/components/Template/Footer.tsx`    | Identity, source link, and copyright                                                               |
+| Resume introduction     | `app/resume/page.tsx`                   | Keep this summary aligned with the homepage                                                        |
+| SEO defaults            | `app/layout.tsx`, `src/lib/metadata.ts` | Keywords and shared page-card metadata                                                             |
 
 ### Step 2: About Page
 

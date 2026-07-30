@@ -4,6 +4,10 @@
 # Dependencies
 node_modules/
 
+# Static assets, not source — third-party/legacy files here should not be
+# reformatted or fail formatting checks (see public/books/ history).
+public/
+
 # Build outputs
 .next/
 out/

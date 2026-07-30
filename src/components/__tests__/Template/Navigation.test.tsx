@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-
-import Navigation from '../../Template/Navigation';
 import { AUTHOR_NAME } from '@/lib/utils';
+import Navigation from '../../Template/Navigation';
 
 // Mock usePathname to control active state
 const mockPathname = vi.fn();

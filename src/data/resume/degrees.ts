@@ -19,7 +19,7 @@ const degrees: Degree[] = [
     year: 2021,
   },
   {
-    school: 'Arts et Métiers', 
+    school: 'Arts et Métiers',
     degree: 'General Engineering Degree',
     link: 'https://www.ensam-umi.ac.ma/',
     year: 2012,

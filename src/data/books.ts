@@ -37,7 +37,7 @@ const books: Book[] = [
       'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1671981018i/61272271.jpg',
   },
   {
-    title: 'Chip War: The Fight for the World\'s Most Critical Technology',
+    title: "Chip War: The Fight for the World's Most Critical Technology",
     author: 'Chris Miller',
     category: 'Nonfiction',
     rating: 4,
@@ -115,7 +115,7 @@ const books: Book[] = [
     category: 'History',
     rating: 4,
     image: 'https://pictures.abebooks.com/isbn/9781910701874-fr.jpg',
-  }
+  },
 ];
 
 export default books;
