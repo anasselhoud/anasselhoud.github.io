@@ -1,6 +1,7 @@
 import { act, render } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import profile from '@/data/profile.json';
 import data from '../../stats/personal';
 
 describe('personal stats data', () => {
@@ -48,7 +49,7 @@ describe('personal stats data', () => {
 
     expect(locationStat).toBeDefined();
     expect(locationStat!.label).toBe('Current city');
-    expect(locationStat!.value).toBe('New York, NY');
+    expect(locationStat!.value).toBe(profile.currentCity);
   });
 
   it('Age component renders and updates', () => {

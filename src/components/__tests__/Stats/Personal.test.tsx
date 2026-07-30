@@ -1,6 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import profile from '@/data/profile.json';
 import Personal from '../../Stats/Personal';
 
 describe('Personal', () => {
@@ -35,7 +36,7 @@ describe('Personal', () => {
     render(<Personal />);
 
     expect(screen.getByText('Current city')).toBeInTheDocument();
-    expect(screen.getByText('New York, NY')).toBeInTheDocument();
+    expect(screen.getByText(profile.currentCity)).toBeInTheDocument();
   });
 
   it('has a link for countries visited', () => {
