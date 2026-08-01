@@ -60,6 +60,15 @@ export function createRandomGenome(
  * moved a short distance, or a colour channel perturbed. Never mutates the
  * input, so the caller can cheaply keep the previous genome around to
  * revert to when a mutation is rejected.
+ *
+ * The vertex branch picks its target point once, outside the `.map` —
+ * calling `randomInt` fresh inside the callback instead re-rolled a target
+ * per point, so "move one vertex" actually moved anywhere from zero to all
+ * three most of the time. The colour branch used to gate its one real edit
+ * behind a second, independent coin flip, so roughly a quarter of all calls
+ * copied `color` into a new object without changing any channel — a mutation
+ * that mutated nothing. Both silently violated the "exactly one" promise
+ * above, and cost simulated annealing a wasted iteration each time.
  */
 export function mutateGenome(
   genome: Genome,
@@ -70,41 +79,33 @@ export function mutateGenome(
   const target = genome[index];
   const jitter = Math.max(width, height) * 0.08;
 
-  const next: Triangle =
-    Math.random() < 0.5
-      ? {
-          ...target,
-          points: target.points.map((point, i) =>
-            i === randomInt(3)
-              ? {
-                  x: clamp(
-                    point.x + (Math.random() - 0.5) * jitter * 2,
-                    0,
-                    width,
-                  ),
-                  y: clamp(
-                    point.y + (Math.random() - 0.5) * jitter * 2,
-                    0,
-                    height,
-                  ),
-                }
-              : point,
-          ) as [Point, Point, Point],
-        }
-      : {
-          ...target,
-          color: { ...target.color },
-        };
+  let next: Triangle;
 
-  if (Math.random() >= 0.5) {
+  if (Math.random() < 0.5) {
+    const pointIndex = randomInt(3);
+    next = {
+      ...target,
+      points: target.points.map((point, i) =>
+        i === pointIndex
+          ? {
+              x: clamp(point.x + (Math.random() - 0.5) * jitter * 2, 0, width),
+              y: clamp(point.y + (Math.random() - 0.5) * jitter * 2, 0, height),
+            }
+          : point,
+      ) as [Point, Point, Point],
+    };
+  } else {
     const channel = (['r', 'g', 'b'] as const)[randomInt(3)];
-    next.color = {
-      ...next.color,
-      [channel]: clamp(
-        next.color[channel] + (Math.random() - 0.5) * 60,
-        0,
-        255,
-      ),
+    next = {
+      ...target,
+      color: {
+        ...target.color,
+        [channel]: clamp(
+          target.color[channel] + (Math.random() - 0.5) * 60,
+          0,
+          255,
+        ),
+      },
     };
   }
 
