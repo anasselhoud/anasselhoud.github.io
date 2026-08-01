@@ -1,0 +1,65 @@
+/* ========================================
+   NOW PAGE STYLES
+   ======================================== */
+
+.now-page {
+  display: grid;
+  gap: 2.5rem;
+  max-width: var(--measure-read);
+  padding: 1rem 0 3rem;
+}
+
+.now-header {
+  padding-top: 1.25rem;
+}
+
+.now-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.now-updated {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-fg-light);
+}
+
+.now-updated time {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-fg);
+}
+
+.now-list {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.now-item {
+  padding-top: 1rem;
+  border-top: var(--rule) solid var(--color-border);
+}
+
+.now-item-label {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+.now-item-body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}

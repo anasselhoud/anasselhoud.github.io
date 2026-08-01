@@ -74,6 +74,13 @@ describe('routes', () => {
       .filter((route) => route.primary === false)
       .map((route) => route.path);
 
-    expect(secondaryPaths).toEqual(['/stats', '/projects', '/talks']);
+    expect(secondaryPaths).toEqual([
+      '/stats',
+      '/projects',
+      '/talks',
+      '/research',
+      '/lab',
+      '/now',
+    ]);
   });
 });

@@ -1,0 +1,166 @@
+/* ========================================
+   LAB PAGE STYLES
+   ======================================== */
+
+.lab-page {
+  display: grid;
+  gap: 3rem;
+  padding: 1rem 0 3rem;
+}
+
+.lab-header {
+  padding-top: 1.25rem;
+}
+
+.lab-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.lab-intro {
+  margin: 0.65rem 0 0;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+.lab-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.lab-section-label {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--rule-strong) solid var(--color-fg-bold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-fg-bold);
+}
+
+.lab-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .lab-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.lab-card {
+  padding: 1.1rem 1.25rem;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.lab-card-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-fg-bold);
+}
+
+.lab-card-body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-fg-light);
+}
+
+.lab-experiment-intro {
+  margin: 0;
+  max-width: 62ch;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-fg);
+}
+
+.lab-experiment-intro a {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   TRIANGLE EVOLUTION EXPERIMENT
+   ======================================== */
+
+.triangle-evolution {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 33.6rem;
+  padding: 1.5rem;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+}
+
+.triangle-evolution-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.triangle-evolution-canvas {
+  width: 100%;
+  height: auto;
+  border: var(--rule) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
+.triangle-evolution-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.triangle-evolution-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.triangle-evolution-readout {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 0 0 auto;
+}
+
+.triangle-evolution-readout div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.triangle-evolution-readout dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-light);
+}
+
+.triangle-evolution-readout dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-fg-bold);
+}
+
+@media (max-width: 500px) {
+  .triangle-evolution-readout {
+    margin-left: 0;
+  }
+}

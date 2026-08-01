@@ -35,6 +35,9 @@ describe('sitemap', () => {
         expect.objectContaining({ url: `${SITE_URL}/astrophotography/` }),
         expect.objectContaining({ url: `${SITE_URL}/gaming/` }),
         expect.objectContaining({ url: `${SITE_URL}/talks/` }),
+        expect.objectContaining({ url: `${SITE_URL}/research/` }),
+        expect.objectContaining({ url: `${SITE_URL}/lab/` }),
+        expect.objectContaining({ url: `${SITE_URL}/now/` }),
       ]),
     );
   });

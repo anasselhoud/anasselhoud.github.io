@@ -10,7 +10,7 @@ const data: StatData[] = [
   {
     label: 'Stars this repository has on github',
     key: 'stargazers_count',
-    link: 'https://github.com/anasselhoud/anasselhoud.github.io/stargazers',
+    link: 'https://github.com/anasselhoud/anasselhoud.github.io/',
   },
   {
     label: 'Number of people watching this repository',

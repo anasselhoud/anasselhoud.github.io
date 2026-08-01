@@ -41,6 +41,9 @@
 @import './pages/gaming.css';
 @import './pages/phd-thesis.css';
 @import './pages/talks.css';
+@import './pages/research.css';
+@import './pages/now.css';
+@import './pages/lab.css';
 
 /* Utilities & Animations */
 @import './utilities.css';

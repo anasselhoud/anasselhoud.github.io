@@ -52,6 +52,21 @@ const routes: Route[] = [
     path: '/talks',
     primary: false,
   },
+  {
+    label: 'Research',
+    path: '/research',
+    primary: false,
+  },
+  {
+    label: 'Lab',
+    path: '/lab',
+    primary: false,
+  },
+  {
+    label: 'Now',
+    path: '/now',
+    primary: false,
+  },
 ];
 
 export default routes;

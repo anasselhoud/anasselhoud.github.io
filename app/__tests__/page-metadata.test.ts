@@ -25,9 +25,12 @@ import { metadata as astrophotographyMetadata } from '../astrophotography/page';
 import { metadata as booksMetadata } from '../books/page';
 import { metadata as contactMetadata } from '../contact/page';
 import { metadata as gamingMetadata } from '../gaming/page';
+import { metadata as labMetadata } from '../lab/page';
 import { metadata as notFoundMetadata } from '../not-found';
+import { metadata as nowMetadata } from '../now/page';
 import { metadata as phdThesisMetadata } from '../phd-thesis/page';
 import { metadata as projectsMetadata } from '../projects/page';
+import { metadata as researchMetadata } from '../research/page';
 import { metadata as resumeMetadata } from '../resume/page';
 import { metadata as statsMetadata } from '../stats/page';
 import { metadata as talksMetadata } from '../talks/page';
@@ -55,6 +58,9 @@ describe('page metadata', () => {
     ['gaming', gamingMetadata, `${SITE_URL}/gaming/`],
     ['phd-thesis', phdThesisMetadata, `${SITE_URL}/phd-thesis/`],
     ['talks', talksMetadata, `${SITE_URL}/talks/`],
+    ['research', researchMetadata, `${SITE_URL}/research/`],
+    ['lab', labMetadata, `${SITE_URL}/lab/`],
+    ['now', nowMetadata, `${SITE_URL}/now/`],
   ])('sets page-specific open graph metadata for %s', (_, metadata, url) => {
     expect(metadata.openGraph?.url).toBe(url);
     expect(metadata.openGraph?.description).toBe(metadata.description);
@@ -75,6 +81,9 @@ describe('page metadata', () => {
     ['gaming', gamingMetadata],
     ['phd-thesis', phdThesisMetadata],
     ['talks', talksMetadata],
+    ['research', researchMetadata],
+    ['lab', labMetadata],
+    ['now', nowMetadata],
   ])('sets page-specific twitter metadata for %s', (_, metadata) => {
     expect(metadata.twitter?.description).toBe(metadata.description);
     expect(metadata.twitter?.title).toBe(`${metadata.title} | ${AUTHOR_NAME}`);
@@ -97,6 +106,9 @@ describe('page metadata', () => {
     ['gaming', gamingMetadata],
     ['phd-thesis', phdThesisMetadata],
     ['talks', talksMetadata],
+    ['research', researchMetadata],
+    ['lab', labMetadata],
+    ['now', nowMetadata],
     ['404', notFoundMetadata],
   ])('declares the share card on %s', (_, metadata) => {
     const ogImages = metadata.openGraph?.images;
@@ -127,6 +139,9 @@ describe('page metadata', () => {
     ['gaming', gamingMetadata, `${SITE_URL}/gaming/`],
     ['phd-thesis', phdThesisMetadata, `${SITE_URL}/phd-thesis/`],
     ['talks', talksMetadata, `${SITE_URL}/talks/`],
+    ['research', researchMetadata, `${SITE_URL}/research/`],
+    ['lab', labMetadata, `${SITE_URL}/lab/`],
+    ['now', nowMetadata, `${SITE_URL}/now/`],
   ])('declares a canonical url for %s', (_, metadata, url) => {
     expect(metadata.alternates?.canonical).toBe(url);
   });
