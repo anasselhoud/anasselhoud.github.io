@@ -3,7 +3,8 @@ export type Platform = 'pc' | 'playstation';
 export interface FeaturedGame {
   title: string;
   description: string;
-  image: string;
+  /** Not every entry has a shareable screenshot — omit rather than link a missing file. */
+  image?: string;
   platform: Platform;
   hours: number;
   badge: 'Perfect' | 'Great';
@@ -49,14 +50,13 @@ export const featuredGames: FeaturedGame[] = [
     progression: 100,
   },
   {
-    title: 'Hogwarts Legacy',
+    title: 'Outer Wilds',
     description:
-      'A wizarding open world steeped in castle intrigue, magical combat, and Hogwarts lore.',
-    image: '/images/gaming/hogwarts-legacy.jpg',
-    platform: 'pc',
-    hours: 55,
-    badge: 'Great',
-    genre: 'Wizarding Open World',
+      'A quiet solar system on a 22-minute time loop, rebuilt from memory each run — the rare game you can only discover once, and never stop thinking about after.',
+    platform: 'playstation',
+    hours: 35,
+    badge: 'Perfect',
+    genre: 'Exploration Mystery',
     progression: 100,
   },
 ];

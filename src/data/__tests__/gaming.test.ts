@@ -14,7 +14,6 @@ describe('gaming data — featured games', () => {
     for (const game of featuredGames) {
       expect(typeof game.title).toBe('string');
       expect(typeof game.description).toBe('string');
-      expect(typeof game.image).toBe('string');
       expect(VALID_PLATFORMS).toContain(game.platform);
       expect(typeof game.hours).toBe('number');
       expect(['Perfect', 'Great']).toContain(game.badge);
@@ -30,9 +29,11 @@ describe('gaming data — featured games', () => {
     }
   });
 
-  it('image paths start with /', () => {
+  it('image paths start with / when present', () => {
     for (const game of featuredGames) {
-      expect(game.image.startsWith('/')).toBe(true);
+      if (game.image) {
+        expect(game.image.startsWith('/')).toBe(true);
+      }
     }
   });
 

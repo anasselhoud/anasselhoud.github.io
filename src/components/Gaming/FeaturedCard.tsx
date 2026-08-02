@@ -23,8 +23,17 @@ export default function FeaturedCard({ game }: FeaturedCardProps) {
   return (
     <article className="gaming-featured-card">
       <div className="gaming-featured-media">
-        <Image src={image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" />
-        <div className="gaming-featured-scrim" aria-hidden="true" />
+        {image && (
+          <>
+            <Image
+              src={image}
+              alt=""
+              fill
+              sizes="(max-width: 900px) 100vw, 33vw"
+            />
+            <div className="gaming-featured-scrim" aria-hidden="true" />
+          </>
+        )}
         <span className={`gaming-badge gaming-badge--${badge.toLowerCase()}`}>
           {badge}
         </span>
