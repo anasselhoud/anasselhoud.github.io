@@ -53,6 +53,7 @@ export const featuredGames: FeaturedGame[] = [
     title: 'Outer Wilds',
     description:
       'A quiet solar system on a 22-minute time loop, rebuilt from memory each run — the rare game you can only discover once, and never stop thinking about after.',
+    image: '/images/gaming/outer-wilds.jpg',
     platform: 'playstation',
     hours: 35,
     badge: 'Perfect',
