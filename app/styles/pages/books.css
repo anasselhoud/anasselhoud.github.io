@@ -315,7 +315,11 @@
     align-items: flex-start;
   }
 
+  /* A single full-width column stretched each 2:3 cover to the screen
+     width, making it noticeably taller than the fixed-width covers in the
+     featured slideshow above. Two columns keeps covers a comparable size. */
   .books-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 }
